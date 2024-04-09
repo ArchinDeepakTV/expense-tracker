@@ -40,7 +40,6 @@ export default function LandingPage() {
           <span>total expenditure</span>
           <br />
           <br />
-          <span>Archin Deepak</span>
           <Form />
         </div>
       </div>
