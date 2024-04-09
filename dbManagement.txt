@@ -1,0 +1,46 @@
+https://www.sammeechward.com/deploying-full-stack-js-to-aws-ec2
+
+// connection and setup of db on system
+CREATE DATABASE expenses;
+CREATE ROLE admins WITH LOGIN PASSWORD HLLhcs987;
+GRANT ALL PRIVILEGES ON DATABASE "expenses" TO admins;
+GRANT ALL PRIVILEGES ON TABLE "expenditure" TO admins;
+GRANT ALL PRIVILEGES ON SEQUENCE "expenditure_id_seq" TO admins;
+GRANT ALL PRIVILEGES ON TABLE "totals" TO admins;
+GRANT SELECT ON expenditure TO admins;
+GRANT INSERT ON expenditure TO admins;
+GRANT DELETE ON expenditure TO admins;
+GRANT UPDATE ON expenditure TO admins;
+
+GRANT SELECT ON totals TO admins;
+GRANT INSERT ON totals TO admins;
+GRANT DELETE ON totals TO admins;
+GRANT UPDATE ON totals TO admins;
+
+db:expenses
+table:expenditure, totals
+
+CREATE TABLE totals (
+    total INT NOT NULL
+);
+
+CREATE TABLE expenditure (
+id SERIAL UNIQUE, 
+reason VARCHAR(100) NOT NULL,
+amount NUMERIC(10,2) NOT NULL,
+created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+UPDATE totals SET total = 0;
+
+DROP TABLE IF EXISTS expenditure;
+DROP TABLE IF EXISTS totals;
+
+INSERT INTO expenditure(reason,amount) VALUES ('duke 390', 50000);
+INSERT INTO totals(total) VALUES (5);
+
+UPDATE totals SET total = 50;
+
+DELETE FROM expenditure WHERE reason='duke 390';
+
+psql postgres://admins:HLLhcs987@127.0.0.1/expenses
