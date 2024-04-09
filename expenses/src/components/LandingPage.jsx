@@ -40,8 +40,8 @@ export default function LandingPage() {
           <span>total expenditure</span>
           <br />
           <br />
+          <span>Archin Deepak</span>
           <Form />
-          <span style={{ color: "black" }}>Archin Deepak</span>
         </div>
       </div>
     </>
