@@ -37,7 +37,7 @@ export default function ExpenseListing() {
         console.log(data);
       });
 
-    window.location.href = "/";
+    fetchData();
   };
 
   return (
