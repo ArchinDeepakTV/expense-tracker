@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
 
 export default function ExpenseListing() {
   const [data_from_db, set_data_from_db] = React.useState("");
@@ -36,7 +37,8 @@ export default function ExpenseListing() {
       .then((data) => {
         console.log(data);
       });
-    window.location.href = "/";
+    const navigate = useNavigate();
+    navigate("/expensesList");
   };
 
   return (
