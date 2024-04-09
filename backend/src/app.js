@@ -27,7 +27,7 @@ const {
 app.post("/DB-insert", async (req, res) => {
   let name = req.body.name;
   let amount = req.body.amount;
-  if (parseInt(amount) != 0) {
+  if (parseInt(amount) > 0) {
     await update_total_addition(amount);
     await insert_expense(name, amount);
   }
