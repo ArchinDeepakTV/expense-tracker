@@ -21,7 +21,7 @@ export default function Navbar() {
               HOME
             </button>
           </Link>
-          <Link to={"/expenses-list"}>
+          <Link to={"/expensesList"}>
             <button
               className="btn me-2"
               type="button"
