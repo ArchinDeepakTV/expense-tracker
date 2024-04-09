@@ -41,9 +41,9 @@ export default function LandingPage() {
           <br />
           <br />
           <Form />
+          <span style={{ fontSize: "2px" }}>Archin Deepak</span>
         </div>
       </div>
-      <span style={{ fontSize: "2px" }}>Archin Deepak</span>
     </>
   );
 }
