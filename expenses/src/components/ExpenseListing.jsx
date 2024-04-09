@@ -38,7 +38,6 @@ export default function ExpenseListing() {
       });
 
     window.location.href = "/";
-    window.location.href = "/expensesList";
   };
 
   return (
