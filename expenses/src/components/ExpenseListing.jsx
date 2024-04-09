@@ -18,7 +18,7 @@ export default function ExpenseListing() {
       }
     };
     fetchData();
-  }, []);
+  }, [data_from_db]);
 
   const handle_click = async (id) => {
     let new_entry = { id: id };
@@ -37,7 +37,7 @@ export default function ExpenseListing() {
         console.log(data);
       });
 
-    fetchData();
+    set_data_from_db("");
   };
 
   return (
