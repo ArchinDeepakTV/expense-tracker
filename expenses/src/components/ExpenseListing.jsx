@@ -36,7 +36,7 @@ export default function ExpenseListing() {
       .then((data) => {
         console.log(data);
       });
-    window.location.href = "/expenses-list";
+    window.location.href = "/expensesList";
   };
 
   return (
